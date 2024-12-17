@@ -4,7 +4,7 @@ const app = express();
 const morgan = require("morgan");
 var cors = require('cors');
 require('dotenv').config();
-const port = process.env.PORT;
+const port = process.env.PORT||5000;
 const jwt = require('jsonwebtoken');
 
 const adminRoutes = require("./src/routes/admin");
