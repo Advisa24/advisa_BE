@@ -13,6 +13,7 @@ const expertRoutes = require("./src/routes/expert");
 const loginRoutes = require("./src/routes/login");
 const signupRoutes = require("./src/routes/signup");
 const uploadRoutes = require("./src/routes/uploads");
+const defaultRoutes=require("./src/routes/default")
 app.use(cors());
 app.use(morgan("dev"));
 
@@ -32,9 +33,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/uploads', express.static('uploads'));
-app.use("/", (req,res)=>{
-  res.send("Hello Advisa")
-});
+app.use("/",defaultRoutes);
 app.use("/api/login", loginRoutes);
 app.use("/api/signup", signupRoutes);
 app.use("/api/admin", adminRoutes);
