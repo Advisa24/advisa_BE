@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/uploads', express.static('uploads'));
-app.use("/api", (req,res)=>{
+app.use("/", (req,res)=>{
   res.send("Hello Advisa")
 });
 app.use("/api/login", loginRoutes);
